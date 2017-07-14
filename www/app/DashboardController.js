@@ -1226,20 +1226,11 @@ define(['app'], function (app) {
 												status += '</span><span>Altitude: ' + item.Altitude + ' meter';
 											}
 										}
-<<<<<<< HEAD
 										status = "<span>" + status + "</span>";
 										if ($(id + " #status > span").html() != status) {
 											$(id + " #status > span").html(status);
 										}
 									} else {
-=======
-										if ($(id + " #status").html() != status) {
-											$(id + " #status").html(status);
-										}
-									}
-									else {
-										//normal/compact
->>>>>>> origin/master
 										var img = "";
 										var status = "";
 										var bigtext = "";
@@ -1369,7 +1360,6 @@ define(['app'], function (app) {
 											}
 										}
 
-<<<<<<< HEAD
 										if ($(id + " #bigtext > span").html() != tmpStatus) {
 											$(id + " #bigtext > span").html(tmpStatus);
 										}
@@ -1379,14 +1369,6 @@ define(['app'], function (app) {
 											}, 1000);
 										}
 									} else {
-=======
-										if ($(id + " #bigtext").html() != tmpStatus) {
-											$(id + " #bigtext").html(tmpStatus);
-										}
-									}
-									else {
-										//normal/compact
->>>>>>> origin/master
 										var img = "";
 										if (item.SubType == "Security Panel") {
 											img = '<a href="secpanel/"><img src="images/security48.png" class="lcursor" height="40" width="40"></a>';
@@ -1643,21 +1625,12 @@ define(['app'], function (app) {
 												}
 											}
 										}
-<<<<<<< HEAD
 										status = "<span>" + status + "</span>";
 										if ($(id + " #status > span.wrapper").html() != status) {
 											$(id + " #status > span.wrapper").html(status);
 										}
 									} else {
 										// normal and compact displays
-=======
-										if ($(id + " #status").html() != status) {
-											$(id + " #status").html(status);
-										}
-									}
-									else {
-										//normal/compact
->>>>>>> origin/master
 										var status = "";
 										var bigtext = "";
 										var img = "";
@@ -2285,14 +2258,6 @@ define(['app'], function (app) {
 													'<button class="btn btn-mini" type="button" onclick="SwitchLight(' + item.idx + ',\'Off\',RefreshFavorites,' + item.Protected + ');">' + $.t("Close") + '</button>';
 											}
 										}
-<<<<<<< HEAD
-									} else if (item.SwitchType == "Blinds Percentage") {
-										if (item.Status == 'Closed') {
-											status =
-												'<button class="btn btn-mini" type="button" onclick="SwitchLight(' + item.idx + ',\'Off\',RefreshFavorites,' + item.Protected + ');">' + $.t("Open") + '</button> ' +
-												'<button class="btn btn-mini btn-info" type="button" onclick="SwitchLight(' + item.idx + ',\'On\',RefreshFavorites,' + item.Protected + ');">' + $.t("Closed") + '</button>';
-										} else {
-=======
 									}
 									else if (item.SwitchType == "Blinds Percentage") {
 										if ((item.Status == 'Open')) {
@@ -2301,7 +2266,6 @@ define(['app'], function (app) {
 												'<button class="btn btn-mini" type="button" onclick="SwitchLight(' + item.idx + ',\'On\',RefreshFavorites,' + item.Protected + ');">' + $.t("Close") + '</button>';
 										}
 										else {
->>>>>>> origin/master
 											status =
 												'<button class="btn btn-mini" type="button" onclick="SwitchLight(' + item.idx + ',\'Off\',RefreshFavorites,' + item.Protected + ');">' + $.t("Open") + '</button> ' +
 												'<button class="btn btn-mini btn-info" type="button" onclick="SwitchLight(' + item.idx + ',\'On\',RefreshFavorites,' + item.Protected + ');">' + $.t("Closed") + '</button>';
@@ -2634,17 +2598,6 @@ define(['app'], function (app) {
 												imghtml += '\t      <td id="img2" class="img2"><img src="images/blinds48.png" title="' + $.t("Close Blinds") + '" onclick="SwitchLight(' + item.idx + ',\'Off\',RefreshFavorites,' + item.Protected + ');" class="lcursor" height="40" width="40"></td>\n';
 											}
 										}
-<<<<<<< HEAD
-									} else if (item.SwitchType == "Blinds Percentage") {
-										if (item.Status == 'Closed') {
-											imghtml += '\t      <td id="img" class="img img1"><img src="images/blindsopen48.png" title="' + $.t("Open Blinds") + '" onclick="SwitchLight(' + item.idx + ',\'Off\',RefreshFavorites,' + item.Protected + ');" class="lcursor" height="40" width="40"></td>\n';
-											imghtml += '\t      <td id="img2" class="img2"><img src="images/blinds48sel.png" title="' + $.t("Close Blinds") + '" onclick="SwitchLight(' + item.idx + ',\'On\',RefreshFavorites,' + item.Protected + ');" class="lcursor" height="40" width="40"></td>\n';
-										} else {
-											imghtml += '\t      <td id="img" class="img img1"><img src="images/blindsopen48sel.png" title="' + $.t("Open Blinds") + '" onclick="SwitchLight(' + item.idx + ',\'Off\',RefreshFavorites,' + item.Protected + ');" class="lcursor" height="40" width="40"></td>\n';
-											imghtml += '\t      <td id="img2" class="img2"><img src="images/blinds48.png" title="' + $.t("Close Blinds") + '" onclick="SwitchLight(' + item.idx + ',\'On\',RefreshFavorites,' + item.Protected + ');" class="lcursor" height="40" width="40"></td>\n';
-										}
-									} else if (item.SwitchType == "Blinds Percentage Inverted") {
-=======
 									}
 									else if (item.SwitchType == "Blinds Percentage") {
 										if (item.Status == 'Open') {
@@ -2657,7 +2610,6 @@ define(['app'], function (app) {
 										}
 									}
 									else if (item.SwitchType == "Blinds Percentage Inverted") {
->>>>>>> origin/master
 										if (item.Status == 'Closed') {
 											imghtml += '\t      <td id="img" class="img img1"><img src="images/blindsopen48.png" title="' + $.t("Open Blinds") + '" onclick="SwitchLight(' + item.idx + ',\'On\',RefreshFavorites,' + item.Protected + ');" class="lcursor" height="40" width="40"></td>\n';
 											imghtml += '\t      <td id="img2" class="img2"><img src="images/blinds48sel.png" title="' + $.t("Close Blinds") + '" onclick="SwitchLight(' + item.idx + ',\'Off\',RefreshFavorites,' + item.Protected + ');" class="lcursor" height="40" width="40"></td>\n';
@@ -3644,7 +3596,6 @@ define(['app'], function (app) {
 
 								if (jj == 0) {
 									//first time
-<<<<<<< HEAD
 
 									if (mergeItems) {
 										$('#dashcontent').append('<section class="dashCategory CSS3" id="dashUtility"><h2>' + $.t('Utility Sensors') + ':</h2><div class="row divider" id="utilityDivider"></div></section>');
@@ -3653,10 +3604,6 @@ define(['app'], function (app) {
 									}
 
 									// mobile util start                  
-=======
-									htmlcontent += '<section class="dashCategory" id="dashUtility">';
-									// mobile util start
->>>>>>> origin/master
 									if (($scope.config.DashboardType == 2) || (window.myglobals.ismobile == true)) {
 										if (htmlcontent != "") {
 											htmlcontent += '<br>';
@@ -3834,10 +3781,7 @@ define(['app'], function (app) {
 										'\t      <td id="status" class="status"><span class="wrapper"><span>' + status + '</span></span></td>\n' +
 										'\t    </tr>\n';
 								}
-<<<<<<< HEAD
-=======
 								// end of mobile utilities
->>>>>>> origin/master
 								else {
 									// utilities normal/compact display
 									if ($scope.config.DashboardType == 0) {
@@ -3976,14 +3920,9 @@ define(['app'], function (app) {
 									} else if (item.Type == "Lux") {
 										imagehtml += 'lux48.png" class="lcursor" onclick="ShowLuxLog(\'#dashcontent\',\'ShowFavorites\',' + item.idx + ',\'' + escape(item.Name) + '\', ' + item.SwitchTypeVal + ');" height="40" width="40"></td>\n';
 										statushtml = item.Data;
-<<<<<<< HEAD
-									} else if (item.Type == "Weight") {
-										imagehtml += 'scale48.png" height="40" width="40"></td>\n';
-=======
 									}
 									else if (item.Type == "Weight") {
-										imagehtml += 'scale48.png" class="lcursor" onclick="ShowGeneralGraph(\'#dashcontent\',\'ShowFavorites\',' + item.idx + ',\'' + escape(item.Name) + '\',\'' + item.Type + '\', \'' + item.SubType + '\');" height="40" width="40"></td>\n';
->>>>>>> origin/master
+										imagehtml += 'scale48.png" height="40" width="40" class="lcursor" onclick="ShowGeneralGraph(\'#dashcontent\',\'ShowFavorites\',' + item.idx + ',\'' + escape(item.Name) + '\',\'' + item.Type + '\', \'' + item.SubType + '\');" height="40" width="40"></td>\n';
 										statushtml = item.Data;
 									} else if (item.Type == "Usage") {
 										imagehtml += 'current48.png" class="lcursor" onclick="ShowUsageLog(\'#dashcontent\',\'ShowFavorites\',' + item.idx + ',\'' + escape(item.Name) + '\', ' + item.SwitchTypeVal + ');" height="40" width="40"></td>\n';
