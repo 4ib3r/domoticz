@@ -484,10 +484,9 @@ bool MainWorker::GetSunSettings()
 {
 	int nValue;
 	std::string sValue;
-	if (!m_sql.GetPreferencesVar("Location",nValue,sValue))
-		return false;
 	std::vector<std::string> strarray;
-	StringSplit(sValue, ";", strarray);
+	if (m_sql.GetPreferencesVar("Location",nValue,sValue))
+		StringSplit(sValue, ";", strarray);
 
 	if (strarray.size() != 2)
 	{
@@ -945,7 +944,7 @@ bool MainWorker::AddHardwareFromParams(
 		break;
 	case HTYPE_SysfsGpio:
 #ifdef WITH_GPIO
-		pHardware = new CSysfsGpio(ID, Mode1);
+		pHardware = new CSysfsGpio(ID, Mode1, Mode2);
 #endif
 		break;
 	case HTYPE_Comm5TCP:
@@ -11616,16 +11615,19 @@ bool MainWorker::SwitchLightInt(const std::vector<std::string> &sd, std::string 
 		return true;
 	case pTypeGeneralSwitch:
 		{
+
 			_tGeneralSwitch gswitch;
 			gswitch.type = dType;
 			gswitch.subtype = dSubType;
 			gswitch.seqnbr = m_hardwaredevices[hindex]->m_SeqNr++;
 			gswitch.id = ID;
 			gswitch.unitcode = Unit;
+
 			if (!GetLightCommand(dType, dSubType, switchtype, switchcmd, gswitch.cmnd, options))
 				return false;
 
-			if ((switchtype != STYPE_Selector) && (dSubType != sSwitchGeneralSwitch)) {
+			if ((switchtype != STYPE_Selector) && (dSubType != sSwitchGeneralSwitch))
+			{
 				level = (level > 99) ? 99 : level;
 			}
 
@@ -11655,6 +11657,10 @@ bool MainWorker::SwitchLightInt(const std::vector<std::string> &sd, std::string 
 					}
 				}
 			}
+			else if (((switchtype == STYPE_BlindsPercentage) ||
+					(switchtype == STYPE_BlindsPercentageInverted)) &&
+					(gswitch.cmnd == gswitch_sSetLevel) && (level == 100))
+						gswitch.cmnd = gswitch_sOn;
 
 			gswitch.level = (unsigned char)level;
 			gswitch.rssi = 12;
